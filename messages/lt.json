@@ -1,0 +1,112 @@
+{
+  "Meta": {
+    "title": "Roman Novobranets — Web Studija",
+    "description": "Greitos, gražios svetainės paslaugų verslui. Paleiskite per 48 valandas."
+  },
+  "Nav": {
+    "process": "Procesas",
+    "portfolio": "Portfelis",
+    "pricing": "Kainos",
+    "cta": "Pradėti projektą"
+  },
+  "Hero": {
+    "badge": "Svetainės smulkiam verslui",
+    "headline": "Jūsų verslas internete per <highlight>48 valandas</highlight>",
+    "sub": "Kuriu greitas, gražias svetaines paslaugų verslui. Jūs rūpinatės klientais — aš pasirūpinu skaitmenine puse.",
+    "primaryCta": "Užpildyti užklausą — nemokamai",
+    "secondaryCta": "Peržiūrėti darbus"
+  },
+  "Stats": {
+    "delivery": "Pristatymas",
+    "mobile": "Mobiliai",
+    "seo": "SEO optimizacija",
+    "uptime": "Veikimo laikas"
+  },
+  "Process": {
+    "label": "Kaip tai veikia",
+    "title": "Trys žingsniai iki <highlight>paleidimo</highlight>",
+    "steps": [
+      {
+        "title": "Užpildykite užklausą",
+        "description": "Atsakykite į kelis klausimus apie savo verslą. Užtruks 5 minutes. Suprasiu tiksliai, ko jums reikia."
+      },
+      {
+        "title": "Peržiūrėkite maketą",
+        "description": "Per 24 valandas gausite veikiančią peržiūrą. Kartu tobulinsime, kol bus tobula."
+      },
+      {
+        "title": "Paleiskite",
+        "description": "Svetainė įdiegta, prijungta prie Google ir paruošta pritraukti klientus."
+      }
+    ]
+  },
+  "Portfolio": {
+    "label": "Portfelis",
+    "title": "Naujausi <highlight>projektai</highlight>",
+    "viewLive": "Atidaryti svetainę",
+    "comingSoon": "Netrukus",
+    "items": {
+      "lizagar": {
+        "title": "li_zagar_tan",
+        "description": "Purškiamo įdegio studija Vilniuje. Daugiakalbis landingas su Treatwell rezervacijos integracija, galerija ir Google Maps."
+      },
+      "sharpco": {
+        "title": "Sharp & Co. Kirpykla",
+        "description": "Modernus kirpyklos landingas su internetine registracija, paslaugų meniu ir Instagram integracij."
+      },
+      "morningcup": {
+        "title": "Morning Cup Kavinė",
+        "description": "Jaukios kavinės svetainė su skaitmeniniu meniu, rezervacijos forma ir žemėlapiu. Sukurta mobiliai pirma."
+      }
+    }
+  },
+  "Pricing": {
+    "label": "Kainos",
+    "title": "Skaidrios <highlight>kainos</highlight>",
+    "popular": "Populiarus",
+    "cta": "Pradėti",
+    "tiers": {
+      "landing": {
+        "name": "Landingas",
+        "description": "Viskas, ko reikia išeiti į internetą.",
+        "features": [
+          "Vieno puslapio adaptyvi svetainė",
+          "Mobiliems optimizuotas dizainas",
+          "Pagrindinis SEO nustatymas",
+          "Talpinimas greitu CDN"
+        ]
+      },
+      "automation": {
+        "name": "Landingas + Automatizacija",
+        "description": "Svetainė, kuri dirba už jus visą parą.",
+        "features": [
+          "Viskas iš „Landingas" paketo",
+          "Rezervacijos botas Telegram arba WhatsApp",
+          "Google verslo profilio nustatymas",
+          "Analitikos skydelis"
+        ]
+      },
+      "fulllaunch": {
+        "name": "Pilnas paleidimas",
+        "description": "Aukščiausios kokybės paleidimas ambicingam verslui.",
+        "features": [
+          "Viskas iš „Landingas + Automatizacija" paketo",
+          "Daugiakalbė palaikymas (2–3 kalbos)",
+          "Treatwell / Booksy integracija",
+          "1 mėnesio palaikymas po paleidimo"
+        ]
+      }
+    }
+  },
+  "Cta": {
+    "title": "Pasiruošę išeiti <highlight>internetan?</highlight>",
+    "sub": "Papasakokite apie savo verslą per 5 minutes. Likusiu pasirūpinsiu aš.",
+    "cta": "Pradėti projektą →",
+    "email": "arba rašykite man tiesiogiai"
+  },
+  "Footer": {
+    "copy": "© {year} Roman Novobranets. Vilnius, Lietuva.",
+    "email": "El. paštas",
+    "brief": "Užklausa"
+  }
+}

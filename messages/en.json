@@ -1,0 +1,112 @@
+{
+  "Meta": {
+    "title": "Roman Novobranets — Web Studio",
+    "description": "Fast, beautiful websites for service businesses. Go live in 48 hours."
+  },
+  "Nav": {
+    "process": "Process",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "cta": "Start a Project"
+  },
+  "Hero": {
+    "badge": "Websites for small business",
+    "headline": "Your business online in <highlight>48 hours</highlight>",
+    "sub": "I build fast, beautiful websites for service businesses. You focus on your clients — I handle the digital side.",
+    "primaryCta": "Fill a Brief — It's Free",
+    "secondaryCta": "See My Work"
+  },
+  "Stats": {
+    "delivery": "Delivery",
+    "mobile": "Mobile-Ready",
+    "seo": "SEO Optimized",
+    "uptime": "Uptime"
+  },
+  "Process": {
+    "label": "How it works",
+    "title": "Three steps to <highlight>go live</highlight>",
+    "steps": [
+      {
+        "title": "Fill the Brief",
+        "description": "Answer a few questions about your business. Takes 5 minutes. I'll understand exactly what you need."
+      },
+      {
+        "title": "Review the Draft",
+        "description": "Within 24 hours you get a working preview. We refine it together until it's perfect."
+      },
+      {
+        "title": "Go Live",
+        "description": "Your site is deployed, connected to Google, and ready to bring in clients."
+      }
+    ]
+  },
+  "Portfolio": {
+    "label": "Portfolio",
+    "title": "Recent <highlight>projects</highlight>",
+    "viewLive": "View Live Site",
+    "comingSoon": "Coming Soon",
+    "items": {
+      "lizagar": {
+        "title": "li_zagar_tan",
+        "description": "Spray tanning studio in Vilnius. Multilingual landing page with Treatwell booking integration, gallery, and Google Maps."
+      },
+      "sharpco": {
+        "title": "Sharp & Co. Barbershop",
+        "description": "Modern barbershop landing page with online booking, service menu, and Instagram feed integration."
+      },
+      "morningcup": {
+        "title": "Morning Cup Café",
+        "description": "Cozy café website with digital menu, reservation form, and location map. Designed for mobile-first experience."
+      }
+    }
+  },
+  "Pricing": {
+    "label": "Pricing",
+    "title": "Transparent <highlight>pricing</highlight>",
+    "popular": "Popular",
+    "cta": "Get Started",
+    "tiers": {
+      "landing": {
+        "name": "Landing Page",
+        "description": "Everything you need to go online.",
+        "features": [
+          "One-page responsive website",
+          "Mobile-optimized design",
+          "Basic SEO setup",
+          "Deployed to fast CDN"
+        ]
+      },
+      "automation": {
+        "name": "Landing + Automation",
+        "description": "A site that works for you around the clock.",
+        "features": [
+          "Everything in Landing Page",
+          "Telegram or WhatsApp booking bot",
+          "Google Business Profile setup",
+          "Analytics dashboard"
+        ]
+      },
+      "fulllaunch": {
+        "name": "Full Launch",
+        "description": "Premium launch for ambitious businesses.",
+        "features": [
+          "Everything in Landing + Automation",
+          "Multilingual support (2–3 languages)",
+          "Treatwell / Booksy integration",
+          "1 month post-launch support"
+        ]
+      }
+    }
+  },
+  "Cta": {
+    "title": "Ready to go <highlight>online?</highlight>",
+    "sub": "Tell me about your business in 5 minutes. I'll handle everything else.",
+    "cta": "Start Your Project →",
+    "email": "or email me directly"
+  },
+  "Footer": {
+    "copy": "© {year} Roman Novobranets. Vilnius, Lithuania.",
+    "email": "Email",
+    "brief": "Brief"
+  }
+}
