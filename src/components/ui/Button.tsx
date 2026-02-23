@@ -16,7 +16,7 @@ export function Button({
   className = "",
 }: ButtonProps) {
   const base =
-    "inline-flex items-center gap-2 px-9 py-4 rounded-[var(--radius-pill)] font-semibold text-[0.95rem] transition-all duration-300 no-underline";
+    "inline-flex items-center gap-2 px-6 py-3 md:px-9 md:py-4 rounded-[var(--radius-pill)] font-semibold text-[0.95rem] transition-all duration-300 no-underline";
 
   const styles = {
     primary:

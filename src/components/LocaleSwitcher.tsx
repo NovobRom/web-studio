@@ -4,6 +4,12 @@ import { useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
+const LOCALE_LABELS: Record<string, string> = {
+  en: "English",
+  ru: "Русский",
+  lt: "Lietuvių",
+};
+
 export function LocaleSwitcher() {
   const locale = useLocale();
   const router = useRouter();
@@ -19,6 +25,7 @@ export function LocaleSwitcher() {
         <button
           key={loc}
           onClick={() => handleChange(loc)}
+          aria-label={LOCALE_LABELS[loc] ?? loc}
           className={`px-2.5 py-1 rounded text-[0.78rem] font-medium uppercase tracking-[0.05em] border transition-all duration-200 cursor-pointer ${
             loc === locale
               ? "border-accent text-accent bg-accent-dim"

@@ -32,7 +32,7 @@ export async function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="px-10 py-[100px] bg-bg-card border-t border-b border-border"
+      className="px-5 md:px-10 py-[100px] bg-bg-card border-t border-b border-border scroll-mt-20"
     >
       <SectionHeader label={t("label")} title={title} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-[1100px] mx-auto">

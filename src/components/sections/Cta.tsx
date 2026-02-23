@@ -12,7 +12,7 @@ export async function Cta() {
   });
 
   return (
-    <section className="relative px-10 py-[100px] text-center overflow-hidden">
+    <section className="relative px-5 md:px-10 py-[100px] text-center overflow-hidden">
       {/* Bottom glow */}
       <div
         className="absolute -bottom-[200px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] pointer-events-none"

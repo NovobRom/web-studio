@@ -4,6 +4,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { BASE_URL } from "@/config/constants";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -32,8 +33,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
-
-  const BASE_URL = "https://roman-novobranets.vercel.app";
 
   return {
     title: t("title"),

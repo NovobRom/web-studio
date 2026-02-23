@@ -1,14 +1,12 @@
 import { getTranslations } from "next-intl/server";
-
-const BRIEF_URL = "https://brief-wizard.vercel.app/";
-const EMAIL = "romannovobranets@gmail.com";
+import { BRIEF_URL, EMAIL } from "@/config/constants";
 
 export async function Footer() {
   const t = await getTranslations("Footer");
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.85rem] text-text-muted">
+    <footer className="border-t border-border px-5 md:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.85rem] text-text-muted">
       <p>{t("copy", { year })}</p>
       <div className="flex items-center gap-6">
         <a

@@ -6,7 +6,7 @@ export async function Hero() {
   const t = await getTranslations("Hero");
 
   return (
-    <section className="relative min-h-screen flex items-center px-10 pt-[140px] pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center px-5 md:px-10 pt-[140px] pb-20 overflow-hidden">
       {/* Ambient glow */}
       <div
         className="absolute -top-[200px] left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none z-0"
