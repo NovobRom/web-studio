@@ -1,7 +1,8 @@
 {
   "Meta": {
     "title": "Roman Novobranets — Web Studija",
-    "description": "Greitos, gražios svetainės paslaugų verslui. Paleiskite per 48 valandas."
+    "description": "Greitos, gražios svetainės paslaugų verslui. Paleiskite per 48 valandas.",
+    "keywords": "svetainių kūrimas, interneto svetainės, web studija, svetainės verslui, Next.js programuotojas, greitos svetainės"
   },
   "Nav": {
     "process": "Procesas",
@@ -48,7 +49,9 @@
     "items": {
       "lizagar": {
         "title": "li_zagar_tan",
-        "description": "Purškiamo įdegio studija Vilniuje. Next.js 15 trimis kalbomis (LT/RU/EN), Supabase galerija su admin panele, Treatwell rezervacijos, 4.9★ iš 73 atsiliepimų."
+        "task": "\nUžduotis:\nKlientas registracijoms naudojo tik Instagram profilį. Tikslas buvo sukurti skaitmeninį atstovavimą nuo nulio, kad atrodytų profesionaliai ir išsiskirtų iš konkurentų.",
+        "solution": "\nSprendimas:\nSukurtas aukščiausios kokybės dizainas nuo švaraus lapo, sukurta daugiakalbė platforma (LT/RU/EN) naudojant Next.js 15, integruotas Treatwell registracijos valdiklis ir Supabase galerija.",
+        "result": "\nRezultatas:\nKlientas gavo pilnai veikiančią premium platformą. Svetainė atrodo brangiai, verčia srautą į užklausas ir didina pasitikėjimą studija (4.9★ iš 73 atsiliepimų)."
       },
       "sharpco": {
         "title": "Sharp & Co. Kirpykla",
@@ -57,6 +60,28 @@
       "morningcup": {
         "title": "Morning Cup Kavinė",
         "description": "Jaukios kavinės svetainė su skaitmeniniu meniu, rezervacijos forma ir žemėlapiu. Sukurta mobiliai pirma."
+      }
+    }
+  },
+  "Services": {
+    "label": "Privalumai",
+    "title": "Kodėl <highlight>Landing Page</highlight>?",
+    "items": {
+      "conversion": {
+        "title": "Aukšta konversija",
+        "description": "Vieno puslapio struktūra veda lankytoją prie vieno tikslo, paversdama paspaudimus realiais klientais."
+      },
+      "speed": {
+        "title": "Žaibiškas greitis",
+        "description": "Šiuolaikinės technologijos („Next.js“) užtikrina momentinį puslapio įkėlimą ir išlaiko klientų dėmesį."
+      },
+      "mobile": {
+        "title": "Pritaikyta mobiliems",
+        "description": "Jūsų svetainė atrodys ir veiks nepriekaištingai bet kuriame išmaniajame telefone – ten, kur yra dauguma jūsų klientų."
+      },
+      "launch": {
+        "title": "Paleidimas per 48 valandas",
+        "description": "Procesas ištobulintas iki smulkmenų. Jūsų verslas atsiranda internete ir pradeda nešti užklausas per rekordiškai trumpą laiką."
       }
     }
   },
@@ -95,6 +120,44 @@
           "Treatwell / Booksy integracija",
           "1 mėnesio palaikymas po paleidimo"
         ]
+      }
+    }
+  },
+  "Testimonials": {
+    "label": "Atsiliepimai",
+    "title": "Ką sako <highlight>klientai</highlight>",
+    "items": {
+      "client1": {
+        "name": "Kliento Vardas",
+        "role": "Pareigos, Įmonė",
+        "text": "Čia bus jūsų pirmasis atsiliepimas. Vieta tekstui, kur klientas dalijasi įspūdžiais apie darbą su jumis ir pasiektais rezultatais."
+      },
+      "client2": {
+        "name": "Kliento Vardas 2",
+        "role": "Pareigos, Įmonė",
+        "text": "Čia bus jūsų antrasis atsiliepimas. Galite lengvai pakeisti šį tekstą tikru atsiliepimu vertimų failuose."
+      }
+    }
+  },
+  "Faq": {
+    "label": "DUK",
+    "title": "Atsakymai į <highlight>jūsų klausimus</highlight>",
+    "items": {
+      "q1": {
+        "question": "Kiek laiko trunka sukurti svetainę?",
+        "answer": "Vidutiniškai nuo 2 iki 5 dienų, priklausomai nuo projekto sudėtingumo ir jūsų turimos paruoštos medžiagos (tekstų, nuotraukų)."
+      },
+      "q2": {
+        "question": "Ką daryti, jei man nepatiks dizainas?",
+        "answer": "Prieš galutinį paleidimą mes suderiname maketą. Atlieku pakeitimus, kol rezultatas jus visiškai tenkins."
+      },
+      "q3": {
+        "question": "Kaip vyksta apmokėjimas?",
+        "answer": "Mokėjimas dalijamas į dvi dalis: 50% avansas prieš pradedant darbus ir likę 50% po svetainės patvirtinimo ir paleidimo."
+      },
+      "q4": {
+        "question": "Ar vėliau reikės mokėti už svetainės palaikymą?",
+        "answer": "Į „Pilnas paleidimas“ paketą įeina 1 mėnuo palaikymo. Po to galite patys administruoti svetainę (tai lengva) arba prašyti vienkartinės mokamos pagalbos."
       }
     }
   },

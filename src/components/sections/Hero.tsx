@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { BRIEF_URL } from "@/config/constants";
 
 export async function Hero() {
@@ -54,12 +55,16 @@ export async function Hero() {
           className="flex gap-4 justify-center flex-wrap animate-fade-in-up"
           style={{ animationDelay: "0.8s" }}
         >
-          <Button variant="primary" href={BRIEF_URL} external>
-            {t("primaryCta")}
-          </Button>
-          <Button variant="secondary" href="#portfolio">
-            {t("secondaryCta")}
-          </Button>
+          <MagneticButton strength={15}>
+            <Button variant="primary" href={BRIEF_URL} external>
+              {t("primaryCta")}
+            </Button>
+          </MagneticButton>
+          <MagneticButton strength={10}>
+            <Button variant="secondary" href="#portfolio">
+              {t("secondaryCta")}
+            </Button>
+          </MagneticButton>
         </div>
       </div>
     </section>

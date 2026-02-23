@@ -39,12 +39,29 @@ export function PortfolioCard({
 
       {/* Info */}
       <div className="p-7">
-        <h3 className="text-[1.15rem] font-semibold mb-2 tracking-[-0.01em]">
+        <h3 className="text-[1.15rem] font-semibold mb-3 tracking-[-0.01em]">
           {item.titleKey}
         </h3>
-        <p className="text-[0.88rem] text-text-dim leading-relaxed mb-4">
-          {item.descriptionKey}
-        </p>
+
+        {item.descriptionKey && (
+          <p className="text-[0.88rem] text-text-dim leading-relaxed mb-5">
+            {item.descriptionKey}
+          </p>
+        )}
+
+        {item.taskKey && (
+          <div className="flex flex-col gap-3 mb-6">
+            <div className="text-[0.85rem] text-text-dim leading-relaxed whitespace-pre-line">
+              {item.taskKey}
+            </div>
+            <div className="text-[0.85rem] text-text-dim leading-relaxed whitespace-pre-line">
+              {item.solutionKey}
+            </div>
+            <div className="text-[0.85rem] text-text-dim leading-relaxed whitespace-pre-line font-medium text-text">
+              {item.resultKey}
+            </div>
+          </div>
+        )}
 
         {/* Tech tags */}
         <div className="flex gap-2 flex-wrap mb-4">

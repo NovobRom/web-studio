@@ -15,19 +15,18 @@ export async function Portfolio() {
   });
 
   // Resolve translated titles/descriptions into items
-  const resolvedItems: PortfolioItem[] = portfolioItems.map((item) => ({
-    ...item,
-    titleKey: item.id === "li-zagar-tan"
-      ? t("items.lizagar.title")
-      : item.id === "sharp-co"
-      ? t("items.sharpco.title")
-      : t("items.morningcup.title"),
-    descriptionKey: item.id === "li-zagar-tan"
-      ? t("items.lizagar.description")
-      : item.id === "sharp-co"
-      ? t("items.sharpco.description")
-      : t("items.morningcup.description"),
-  }));
+  const resolvedItems: PortfolioItem[] = portfolioItems.map((item) => {
+    const baseKey = `items.${item.id.replace(/-/g, "")}`;
+    return {
+      ...item,
+      titleKey: t(`${baseKey}.title`),
+      // Fallback for older items that only use description
+      descriptionKey: t.raw(baseKey).description ? t(`${baseKey}.description`) : undefined,
+      taskKey: t.raw(baseKey).task ? t(`${baseKey}.task`) : undefined,
+      solutionKey: t.raw(baseKey).solution ? t(`${baseKey}.solution`) : undefined,
+      resultKey: t.raw(baseKey).result ? t(`${baseKey}.result`) : undefined,
+    };
+  });
 
   return (
     <section
@@ -35,18 +34,18 @@ export async function Portfolio() {
       className="px-5 md:px-10 py-[100px] bg-bg-card border-t border-b border-border scroll-mt-20"
     >
       <div className="max-w-[1200px] mx-auto">
-      <SectionHeader label={t("label")} title={title} />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-[1100px] mx-auto">
-        {resolvedItems.map((item, i) => (
-          <FadeInWhenVisible key={item.id} delay={i * 0.12}>
-            <PortfolioCard
-              item={item}
-              viewLiveLabel={t("viewLive")}
-              comingSoonLabel={t("comingSoon")}
-            />
-          </FadeInWhenVisible>
-        ))}
-      </div>
+        <SectionHeader label={t("label")} title={title} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-[1100px] mx-auto">
+          {resolvedItems.map((item, i) => (
+            <FadeInWhenVisible key={item.id} delay={i * 0.12}>
+              <PortfolioCard
+                item={item}
+                viewLiveLabel={t("viewLive")}
+                comingSoonLabel={t("comingSoon")}
+              />
+            </FadeInWhenVisible>
+          ))}
+        </div>
       </div>
     </section>
   );

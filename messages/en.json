@@ -1,7 +1,8 @@
 {
   "Meta": {
     "title": "Roman Novobranets — Web Studio",
-    "description": "Fast, beautiful websites for service businesses. Go live in 48 hours."
+    "description": "Fast, beautiful websites for service businesses. Go live in 48 hours.",
+    "keywords": "web development, website creation, web studio, service business websites, Next.js developer, fast websites"
   },
   "Nav": {
     "process": "Process",
@@ -48,7 +49,9 @@
     "items": {
       "lizagar": {
         "title": "li_zagar_tan",
-        "description": "Spray tan studio in Vilnius. Next.js 15 in 3 languages (LT/RU/EN), Supabase gallery with admin panel, Treatwell booking, 4.9★ from 73 reviews."
+        "task": "\nTask:\nThe client only had an Instagram profile for bookings. The goal was to build a digital presence from scratch to look professional and stand out from competitors.",
+        "solution": "\nSolution:\nDeveloped a premium design from a blank canvas, built a multilingual platform (LT/RU/EN) using Next.js 15, and integrated Treatwell booking widget along with a Supabase-powered gallery.",
+        "result": "\nResult:\nThe client received a fully functional premium platform. The site looks expensive, converts traffic into leads, and builds trust (4.9★ from 73 reviews)."
       },
       "sharpco": {
         "title": "Sharp & Co. Barbershop",
@@ -57,6 +60,28 @@
       "morningcup": {
         "title": "Morning Cup Café",
         "description": "Cozy café website with digital menu, reservation form, and location map. Designed for mobile-first experience."
+      }
+    }
+  },
+  "Services": {
+    "label": "Advantages",
+    "title": "Why a <highlight>Landing Page</highlight>?",
+    "items": {
+      "conversion": {
+        "title": "High Conversion Rate",
+        "description": "A single-page structure guides the visitor to one specific action, turning clicks into real leads."
+      },
+      "speed": {
+        "title": "Lightning Fast",
+        "description": "Modern technologies (Next.js) ensure instant page loading, keeping your customers' attention."
+      },
+      "mobile": {
+        "title": "Mobile-First Design",
+        "description": "Your site will look and work perfectly on any smartphone — exactly where most of your customers are."
+      },
+      "launch": {
+        "title": "Launch in 48 Hours",
+        "description": "The process is streamlined to perfection. Your business goes online and starts bringing in leads in record time."
       }
     }
   },
@@ -95,6 +120,44 @@
           "Treatwell / Booksy integration",
           "1 month post-launch support"
         ]
+      }
+    }
+  },
+  "Testimonials": {
+    "label": "Testimonials",
+    "title": "What <highlight>clients</highlight> say",
+    "items": {
+      "client1": {
+        "name": "Client Name",
+        "role": "Role, Company",
+        "text": "This is a placeholder for your first testimonial. A place for text where the client shares their impressions of working with you and the results achieved."
+      },
+      "client2": {
+        "name": "Client Name 2",
+        "role": "Role, Company",
+        "text": "This is a placeholder for your second testimonial. You can easily replace this text with a real review in the translation files."
+      }
+    }
+  },
+  "Faq": {
+    "label": "FAQ",
+    "title": "Answers to <highlight>your questions</highlight>",
+    "items": {
+      "q1": {
+        "question": "How long does it take to create a website?",
+        "answer": "On average, from 2 to 5 days, depending on the complexity of the project and the availability of your ready materials (texts, photos)."
+      },
+      "q2": {
+        "question": "What if I don't like the design?",
+        "answer": "Before the final launch, we approve the layout. I make iterations of edits so that you are completely satisfied with the result."
+      },
+      "q3": {
+        "question": "How does the payment work?",
+        "answer": "The payment is divided into two parts: a 50% advance payment before starting the work and the remaining 50% after the approval and launch of the site."
+      },
+      "q4": {
+        "question": "Do I need to pay for website support later?",
+        "answer": "The 'Full Launch' package includes 1 month of support. After that, you can either administer the site yourself (it's easy) or request one-time paid assistance."
       }
     }
   },

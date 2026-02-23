@@ -3,7 +3,10 @@ export type PortfolioStatus = "live" | "coming-soon";
 export interface PortfolioItem {
   id: string;
   titleKey: string;
-  descriptionKey: string;
+  descriptionKey?: string;
+  taskKey?: string;
+  solutionKey?: string;
+  resultKey?: string;
   category: string;
   techTags: string[];
   status: PortfolioStatus;

@@ -2,7 +2,7 @@ import type { PortfolioItem } from "@/types/portfolio";
 
 export const portfolioItems: PortfolioItem[] = [
   {
-    id: "li-zagar-tan",
+    id: "lizagar",
     titleKey: "Portfolio.items.lizagar.title",
     descriptionKey: "Portfolio.items.lizagar.description",
     category: "Beauty",

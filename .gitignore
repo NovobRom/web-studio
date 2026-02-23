@@ -43,3 +43,8 @@ next-env.d.ts
 # local tooling (not part of project)
 .antigravity/
 .claude/
+
+# playwright
+/playwright-report/
+/test-results/
+/blob-report/
