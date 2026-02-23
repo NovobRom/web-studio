@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
-
-const BRIEF_URL = "https://brief-wizard.vercel.app/";
+import { BRIEF_URL } from "@/config/constants";
 
 export async function Hero() {
   const t = await getTranslations("Hero");
@@ -34,13 +33,13 @@ export async function Hero() {
         <h1
           className="font-display text-[clamp(2.8rem,6vw,4.5rem)] font-normal leading-[1.1] tracking-[-0.02em] mb-6 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
-          dangerouslySetInnerHTML={{
-            __html: t("headline").replace(
-              /<highlight>(.*?)<\/highlight>/,
-              '<em class="italic text-accent">$1</em>'
+        >
+          {t.rich("headline", {
+            highlight: (chunks) => (
+              <em className="italic text-accent">{chunks}</em>
             ),
-          }}
-        />
+          })}
+        </h1>
 
         {/* Subtitle */}
         <p

@@ -7,21 +7,11 @@ import { pricingTiers } from "@/data/pricing";
 export async function Pricing() {
   const t = await getTranslations("Pricing");
 
-  const title = (
-    <>
-      {t("title")
-        .split(/<highlight>|<\/highlight>/)
-        .map((part, i) =>
-          i === 1 ? (
-            <em key={i} className="italic text-accent">
-              {part}
-            </em>
-          ) : (
-            part
-          )
-        )}
-    </>
-  );
+  const title = t.rich("title", {
+    highlight: (chunks) => (
+      <em className="italic text-accent">{chunks}</em>
+    ),
+  });
 
   return (
     <section id="pricing" className="px-10 py-[100px]">

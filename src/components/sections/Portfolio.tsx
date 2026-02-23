@@ -8,21 +8,11 @@ import type { PortfolioItem } from "@/types/portfolio";
 export async function Portfolio() {
   const t = await getTranslations("Portfolio");
 
-  const title = (
-    <>
-      {t("title")
-        .split(/<highlight>|<\/highlight>/)
-        .map((part, i) =>
-          i === 1 ? (
-            <em key={i} className="italic text-accent">
-              {part}
-            </em>
-          ) : (
-            part
-          )
-        )}
-    </>
-  );
+  const title = t.rich("title", {
+    highlight: (chunks) => (
+      <em className="italic text-accent">{chunks}</em>
+    ),
+  });
 
   // Resolve translated titles/descriptions into items
   const resolvedItems: PortfolioItem[] = portfolioItems.map((item) => ({

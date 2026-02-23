@@ -108,5 +108,10 @@
     "copy": "© {year} Roman Novobranets. Vilnius, Lietuva.",
     "email": "El. paštas",
     "brief": "Užklausa"
+  },
+  "NotFound": {
+    "title": "Puslapis nerastas",
+    "sub": "Puslapis, kurio ieškote, neegzistuoja arba buvo perkeltas.",
+    "cta": "Į pradžią"
   }
 }

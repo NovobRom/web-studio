@@ -33,14 +33,23 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Meta" });
 
+  const BASE_URL = "https://roman-novobranets.vercel.app";
+
   return {
     title: t("title"),
     description: t("description"),
-    metadataBase: new URL("https://roman-novobranets.vercel.app"),
+    metadataBase: new URL(BASE_URL),
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${BASE_URL}/${l}`])
+      ),
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
       type: "website",
+      url: `${BASE_URL}/${locale}`,
     },
   };
 }

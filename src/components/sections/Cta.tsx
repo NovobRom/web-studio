@@ -1,27 +1,15 @@
 import { getTranslations } from "next-intl/server";
 import { FadeInWhenVisible } from "@/components/ui/FadeInWhenVisible";
-
-const BRIEF_URL = "https://brief-wizard.vercel.app/";
-const EMAIL = "romannovobranets@gmail.com";
+import { BRIEF_URL, EMAIL } from "@/config/constants";
 
 export async function Cta() {
   const t = await getTranslations("Cta");
 
-  const title = (
-    <>
-      {t("title")
-        .split(/<highlight>|<\/highlight>/)
-        .map((part, i) =>
-          i === 1 ? (
-            <em key={i} className="italic text-accent">
-              {part}
-            </em>
-          ) : (
-            part
-          )
-        )}
-    </>
-  );
+  const title = t.rich("title", {
+    highlight: (chunks) => (
+      <em className="italic text-accent">{chunks}</em>
+    ),
+  });
 
   return (
     <section className="relative px-10 py-[100px] text-center overflow-hidden">
