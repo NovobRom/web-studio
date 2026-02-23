@@ -6,7 +6,7 @@ export const portfolioItems: PortfolioItem[] = [
     titleKey: "Portfolio.items.lizagar.title",
     descriptionKey: "Portfolio.items.lizagar.description",
     category: "Beauty",
-    techTags: ["Next.js", "3 Languages", "Booking"],
+    techTags: ["Next.js 15", "Supabase", "Treatwell", "3 Languages"],
     status: "live",
     liveUrl: "https://li-zagar-tan.vercel.app/",
     imageUrl: "/images/li-zagar-tan.jpg",
