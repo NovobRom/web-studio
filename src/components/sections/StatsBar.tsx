@@ -13,7 +13,8 @@ export async function StatsBar() {
 
   return (
     <FadeInWhenVisible>
-      <div className="flex justify-center gap-8 sm:gap-12 md:gap-[60px] flex-wrap px-5 md:px-10 py-12 border-b border-border">
+      <div className="px-5 md:px-10 py-12 border-b border-border">
+        <div className="max-w-[1200px] mx-auto flex justify-center gap-8 sm:gap-12 md:gap-[60px] flex-wrap">
         {stats.map((stat) => (
           <div key={stat.labelKey} className="text-center">
             <span className="font-display text-[2.2rem] text-accent block leading-[1.2]">
@@ -24,6 +25,7 @@ export async function StatsBar() {
             </span>
           </div>
         ))}
+        </div>
       </div>
     </FadeInWhenVisible>
   );

@@ -6,7 +6,8 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border px-5 md:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[0.85rem] text-text-muted">
+    <footer className="border-t border-border px-5 md:px-10 py-8 text-[0.85rem] text-text-muted">
+      <div className="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>{t("copy", { year })}</p>
       <div className="flex items-center gap-6">
         <a
@@ -23,6 +24,7 @@ export async function Footer() {
         >
           {t("brief")}
         </a>
+      </div>
       </div>
     </footer>
   );

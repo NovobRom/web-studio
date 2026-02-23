@@ -45,12 +45,13 @@ export function Nav() {
   return (
     <nav
       ref={menuRef}
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-5 md:px-10 py-5 border-b border-border transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 px-5 md:px-10 py-5 border-b border-border transition-all duration-300 ${
         scrolled
           ? "bg-bg/95 backdrop-blur-2xl"
           : "bg-bg/80 backdrop-blur-xl"
       }`}
     >
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between">
       {/* Logo */}
       <Link
         href="/"
@@ -98,6 +99,7 @@ export function Nav() {
           className={`block w-[22px] h-[2px] bg-text transition-all duration-300 ${isOpen ? "-rotate-45 -translate-y-[7px]" : ""}`}
         />
       </button>
+      </div>
 
       {/* Mobile menu */}
       <div
@@ -112,15 +114,15 @@ export function Nav() {
             key={link.href}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="px-5 md:px-10 py-3 text-text-dim no-underline text-[0.95rem] hover:text-text transition-colors"
+            className="px-5 py-3 text-text-dim no-underline text-[0.95rem] hover:text-text transition-colors"
           >
             {link.label}
           </a>
         ))}
-        <div className="px-5 md:px-10 pt-2 pb-1">
+        <div className="px-5 pt-2 pb-1">
           <LocaleSwitcher />
         </div>
-        <div className="px-5 md:px-10 pt-2">
+        <div className="px-5 pt-2">
           <a
             href={BRIEF_URL}
             target="_blank"

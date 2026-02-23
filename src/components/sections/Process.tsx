@@ -15,6 +15,7 @@ export async function Process() {
 
   return (
     <section id="process" className="px-5 md:px-10 py-[100px] scroll-mt-20">
+      <div className="max-w-[1200px] mx-auto">
       <SectionHeader label={t("label")} title={title} />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
         {processSteps.map((step, i) => (
@@ -26,6 +27,7 @@ export async function Process() {
             />
           </FadeInWhenVisible>
         ))}
+      </div>
       </div>
     </section>
   );
