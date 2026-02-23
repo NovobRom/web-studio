@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { FadeInWhenVisible } from "@/components/ui/FadeInWhenVisible";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { Button } from "@/components/ui/Button";
 import { BRIEF_URL, EMAIL } from "@/config/constants";
 
 export async function Cta() {
@@ -32,14 +33,9 @@ export async function Cta() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <MagneticButton strength={15}>
-            <a
-              href={BRIEF_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-9 py-4 bg-accent text-bg rounded-[var(--radius-pill)] font-semibold text-[0.95rem] no-underline hover:opacity-90 hover:-translate-y-0.5 transition-all duration-300 shadow-[0_0_0_0_rgba(212,168,67,0)] hover:shadow-[0_8px_30px_rgba(212,168,67,0.25)]"
-            >
+            <Button variant="primary" href={BRIEF_URL} external>
               {t("cta")}
-            </a>
+            </Button>
           </MagneticButton>
           <a
             href={`mailto:${EMAIL}`}

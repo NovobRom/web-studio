@@ -1,12 +1,12 @@
 import type { PricingTier } from "@/types/pricing";
-
-const BRIEF_URL = "https://brief-wizard.vercel.app/";
+import { BRIEF_URL } from "@/config/constants";
 
 export const pricingTiers: PricingTier[] = [
   {
     id: "landing",
     nameKey: "Pricing.tiers.landing.name",
     price: 350,
+    pricePrefixKey: "from",
     currency: "€",
     descriptionKey: "Pricing.tiers.landing.description",
     featureKeys: [
@@ -22,6 +22,7 @@ export const pricingTiers: PricingTier[] = [
     id: "automation",
     nameKey: "Pricing.tiers.automation.name",
     price: 600,
+    originalPrice: 850,
     currency: "€",
     descriptionKey: "Pricing.tiers.automation.description",
     featureKeys: [
@@ -37,6 +38,7 @@ export const pricingTiers: PricingTier[] = [
     id: "fulllaunch",
     nameKey: "Pricing.tiers.fulllaunch.name",
     price: 900,
+    originalPrice: 1250,
     currency: "€",
     descriptionKey: "Pricing.tiers.fulllaunch.description",
     featureKeys: [

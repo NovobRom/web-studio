@@ -57,7 +57,7 @@ export function PortfolioCard({
             <div className="text-[0.85rem] text-text-dim leading-relaxed whitespace-pre-line">
               {item.solutionKey}
             </div>
-            <div className="text-[0.85rem] text-text-dim leading-relaxed whitespace-pre-line font-medium text-text">
+            <div className="text-[0.85rem] leading-relaxed whitespace-pre-line font-medium text-text">
               {item.resultKey}
             </div>
           </div>

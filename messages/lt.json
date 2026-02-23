@@ -1,27 +1,29 @@
 {
   "Meta": {
     "title": "Roman Novobranets — Web Studija",
-    "description": "Greitos, gražios svetainės paslaugų verslui. Paleiskite per 48 valandas.",
-    "keywords": "svetainių kūrimas, interneto svetainės, web studija, svetainės verslui, Next.js programuotojas, greitos svetainės"
+    "description": "Greitos, gražios svetainės paslaugų verslui. Paleiskite per kelias dienas.",
+    "keywords": "svetainių kūrimas, interneto svetainės, web studija, svetainės verslui, Next.js programuotojas, greitos svetainės, landingas, grožio salono svetainė"
   },
   "Nav": {
+    "services": "Paslaugos",
     "process": "Procesas",
     "portfolio": "Portfelis",
     "pricing": "Kainos",
+    "faq": "DUK",
     "cta": "Pradėti projektą"
   },
   "Hero": {
     "badge": "Svetainės smulkiam verslui",
-    "headline": "Jūsų verslas internete per <highlight>48 valandas</highlight>",
+    "headline": "Jūsų verslas internete per <highlight>dienas</highlight>",
     "sub": "Kuriu greitas, gražias svetaines paslaugų verslui. Jūs rūpinatės klientais — aš pasirūpinu skaitmenine puse.",
     "primaryCta": "Užpildyti užklausą — nemokamai",
     "secondaryCta": "Peržiūrėti darbus"
   },
   "Stats": {
-    "delivery": "Pristatymas",
-    "mobile": "Mobiliai",
-    "seo": "SEO optimizacija",
-    "uptime": "Veikimo laikas"
+    "delivery": "Greitas paleidimas",
+    "mobile": "Mobilumo balas",
+    "seo": "PageSpeed",
+    "uptime": "Patenkinti klientai"
   },
   "Process": {
     "label": "Kaip tai veikia",
@@ -80,8 +82,8 @@
         "description": "Jūsų svetainė atrodys ir veiks nepriekaištingai bet kuriame išmaniajame telefone – ten, kur yra dauguma jūsų klientų."
       },
       "launch": {
-        "title": "Paleidimas per 48 valandas",
-        "description": "Procesas ištobulintas iki smulkmenų. Jūsų verslas atsiranda internete ir pradeda nešti užklausas per rekordiškai trumpą laiką."
+        "title": "Greitas paleidimas",
+        "description": "Procesas ištobulintas iki smulkmenų. Jūsų verslas greitai atsiranda internete ir pradeda nešti užklausas."
       }
     }
   },
@@ -90,6 +92,7 @@
     "title": "Skaidrios <highlight>kainos</highlight>",
     "popular": "Populiarus",
     "cta": "Pradėti",
+    "from": "nuo ",
     "tiers": {
       "landing": {
         "name": "Landingas",
@@ -128,14 +131,14 @@
     "title": "Ką sako <highlight>klientai</highlight>",
     "items": {
       "client1": {
-        "name": "Kliento Vardas",
-        "role": "Pareigos, Įmonė",
-        "text": "Čia bus jūsų pirmasis atsiliepimas. Vieta tekstui, kur klientas dalijasi įspūdžiais apie darbą su jumis ir pasiektais rezultatais."
+        "name": "Studija li_zagar_tan",
+        "role": "Grožio studija, Vilnius",
+        "text": "Romanas sukūrė mūsų platformą nuo nulio per kelias dienas. Anksčiau turėjome tik Instagram. Dabar turime daugiakalbę rezervacijų svetainę, kuri atrodo aukščiausios kokybės, įkeliama akimirksniu ir klientai ja pasitiki. 4.9★ iš 73 atsiliepimų — kalba patys už save."
       },
       "client2": {
-        "name": "Kliento Vardas 2",
-        "role": "Pareigos, Įmonė",
-        "text": "Čia bus jūsų antrasis atsiliepimas. Galite lengvai pakeisti šį tekstą tikru atsiliepimu vertimų failuose."
+        "name": "Jūsų vardas čia",
+        "role": "Jūsų verslas",
+        "text": "Norite savo atsiliepimo čia? Sukurkime kažką puikaus kartu. Užpildykite užklausą — tai trunka 5 minutes ir yra visiškai nemokama."
       }
     }
   },
@@ -170,7 +173,8 @@
   "Footer": {
     "copy": "© {year} Roman Novobranets. Vilnius, Lietuva.",
     "email": "El. paštas",
-    "brief": "Užklausa"
+    "brief": "Pradėti projektą",
+    "privacy": "Privatumo politika"
   },
   "NotFound": {
     "title": "Puslapis nerastas",

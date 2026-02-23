@@ -11,22 +11,5 @@ export const portfolioItems: PortfolioItem[] = [
     liveUrl: "https://li-zagar-tan.vercel.app/",
     imageUrl: "/images/li-zagar-tan.jpg",
   },
-  {
-    id: "sharp-co",
-    titleKey: "Portfolio.items.sharpco.title",
-    descriptionKey: "Portfolio.items.sharpco.description",
-    category: "Barbershop",
-    techTags: ["Landing Page", "Online Booking", "Mobile-First"],
-    status: "coming-soon",
-    placeholderInitials: "S&C",
-  },
-  {
-    id: "morning-cup",
-    titleKey: "Portfolio.items.morningcup.title",
-    descriptionKey: "Portfolio.items.morningcup.description",
-    category: "HoReCa",
-    techTags: ["Restaurant", "Digital Menu", "Reservations"],
-    status: "coming-soon",
-    placeholderInitials: "MC",
-  },
+  // More projects coming soon — real clients only
 ];

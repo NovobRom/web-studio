@@ -16,28 +16,29 @@ export async function Pricing() {
   return (
     <section id="pricing" className="px-5 md:px-10 py-[100px] scroll-mt-20">
       <div className="max-w-[1200px] mx-auto">
-      <SectionHeader label={t("label")} title={title} />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
-        {pricingTiers.map((tier, i) => {
-          const key = tier.id as "landing" | "automation" | "fulllaunch";
-          const features = tier.featureKeys.map((_, fi) =>
-            t(`tiers.${key}.features.${fi}` as Parameters<typeof t>[0])
-          );
+        <SectionHeader label={t("label")} title={title} />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
+          {pricingTiers.map((tier, i) => {
+            const key = tier.id as "landing" | "automation" | "fulllaunch";
+            const features = tier.featureKeys.map((_, fi) =>
+              t(`tiers.${key}.features.${fi}` as Parameters<typeof t>[0])
+            );
 
-          return (
-            <FadeInWhenVisible key={tier.id} delay={i * 0.12}>
-              <PricingCard
-                tier={tier}
-                name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}
-                description={t(`tiers.${key}.description` as Parameters<typeof t>[0])}
-                features={features}
-                ctaLabel={t("cta")}
-                popularLabel={t("popular")}
-              />
-            </FadeInWhenVisible>
-          );
-        })}
-      </div>
+            return (
+              <FadeInWhenVisible key={tier.id} delay={i * 0.12}>
+                <PricingCard
+                  tier={tier}
+                  name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}
+                  description={t(`tiers.${key}.description` as Parameters<typeof t>[0])}
+                  features={features}
+                  ctaLabel={t("cta")}
+                  popularLabel={t("popular")}
+                  pricePrefix={tier.pricePrefixKey ? t(tier.pricePrefixKey as Parameters<typeof t>[0]) : undefined}
+                />
+              </FadeInWhenVisible>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

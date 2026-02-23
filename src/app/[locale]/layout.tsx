@@ -1,4 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -54,11 +60,20 @@ export async function generateMetadata({
       type: "website",
       locale: locale,
       url: `${BASE_URL}/${locale}`,
+      images: [
+        {
+          url: `${BASE_URL}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
+      images: [`${BASE_URL}/og-image.jpg`],
     },
   };
 }
@@ -76,12 +91,86 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${BASE_URL}/#person`,
+        "name": "Roman Novobranets",
+        "url": BASE_URL,
+        "jobTitle": "Web Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vilnius",
+          "addressCountry": "LT",
+        },
+        "sameAs": [],
+      },
+      {
+        "@type": "Service",
+        "provider": { "@id": `${BASE_URL}/#person` },
+        "name": "Landing Page Development",
+        "description": "Fast, beautiful websites for service businesses. Go live from 2 days.",
+        "areaServed": "LT",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "EUR",
+          "price": "350",
+          "url": BASE_URL,
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take to create a website?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On average, from 2 to 5 days, depending on the complexity of the project and the availability of your ready materials (texts, photos).",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "What if I don't like the design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Before the final launch, we approve the layout. I make iterations of edits so that you are completely satisfied with the result.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "How does the payment work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The payment is divided into two parts: a 50% advance payment before starting the work and the remaining 50% after the approval and launch of the site.",
+            },
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to pay for website support later?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 'Full Launch' package includes 1 month of support. After that, you can either administer the site yourself or request one-time paid assistance.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <html
       lang={locale}
       className={`${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script

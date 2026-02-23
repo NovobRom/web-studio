@@ -1,27 +1,29 @@
 {
   "Meta": {
     "title": "Roman Novobranets — Web Studio",
-    "description": "Fast, beautiful websites for service businesses. Go live in 48 hours.",
-    "keywords": "web development, website creation, web studio, service business websites, Next.js developer, fast websites"
+    "description": "Fast, beautiful websites for service businesses. Go live from 2 days.",
+    "keywords": "web development, website creation, web studio, service business websites, Next.js developer, fast websites, landing page, beauty salon website"
   },
   "Nav": {
+    "services": "Services",
     "process": "Process",
     "portfolio": "Portfolio",
     "pricing": "Pricing",
+    "faq": "FAQ",
     "cta": "Start a Project"
   },
   "Hero": {
     "badge": "Websites for small business",
-    "headline": "Your business online in <highlight>48 hours</highlight>",
+    "headline": "Your business online in <highlight>days</highlight>",
     "sub": "I build fast, beautiful websites for service businesses. You focus on your clients — I handle the digital side.",
     "primaryCta": "Fill a Brief — It's Free",
     "secondaryCta": "See My Work"
   },
   "Stats": {
-    "delivery": "Delivery",
-    "mobile": "Mobile-Ready",
-    "seo": "SEO Optimized",
-    "uptime": "Uptime"
+    "delivery": "Fastest launch",
+    "mobile": "Mobile score",
+    "seo": "PageSpeed",
+    "uptime": "Satisfied clients"
   },
   "Process": {
     "label": "How it works",
@@ -80,8 +82,8 @@
         "description": "Your site will look and work perfectly on any smartphone — exactly where most of your customers are."
       },
       "launch": {
-        "title": "Launch in 48 Hours",
-        "description": "The process is streamlined to perfection. Your business goes online and starts bringing in leads in record time."
+        "title": "Fast Launch",
+        "description": "The process is streamlined to perfection. Your business goes online quickly — and starts bringing in leads in no time."
       }
     }
   },
@@ -90,6 +92,7 @@
     "title": "Transparent <highlight>pricing</highlight>",
     "popular": "Popular",
     "cta": "Get Started",
+    "from": "from ",
     "tiers": {
       "landing": {
         "name": "Landing Page",
@@ -128,14 +131,14 @@
     "title": "What <highlight>clients</highlight> say",
     "items": {
       "client1": {
-        "name": "Client Name",
-        "role": "Role, Company",
-        "text": "This is a placeholder for your first testimonial. A place for text where the client shares their impressions of working with you and the results achieved."
+        "name": "li_zagar_tan Studio",
+        "role": "Beauty Studio, Vilnius",
+        "text": "Roman built our platform from scratch in just a few days. Before, we only had Instagram. Now we have a multilingual booking site that looks premium, loads instantly, and our clients trust it. 4.9★ from 73 reviews — that says it all."
       },
       "client2": {
-        "name": "Client Name 2",
-        "role": "Role, Company",
-        "text": "This is a placeholder for your second testimonial. You can easily replace this text with a real review in the translation files."
+        "name": "Your Name Here",
+        "role": "Your Business",
+        "text": "Want your review here? Let's build something great together. Fill in the brief — it takes 5 minutes and it's completely free."
       }
     }
   },
@@ -170,7 +173,8 @@
   "Footer": {
     "copy": "© {year} Roman Novobranets. Vilnius, Lithuania.",
     "email": "Email",
-    "brief": "Brief"
+    "brief": "Start a Project",
+    "privacy": "Privacy Policy"
   },
   "NotFound": {
     "title": "Page not found",
