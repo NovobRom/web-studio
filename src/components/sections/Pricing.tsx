@@ -19,13 +19,13 @@ export async function Pricing() {
         <SectionHeader label={t("label")} title={title} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
           {pricingTiers.map((tier, i) => {
-            const key = tier.id as "landing" | "automation" | "fulllaunch";
+            const key = tier.id as "landing" | "growth" | "fulllaunch";
             const features = tier.featureKeys.map((_, fi) =>
               t(`tiers.${key}.features.${fi}` as Parameters<typeof t>[0])
             );
 
             return (
-              <FadeInWhenVisible key={tier.id} delay={i * 0.12}>
+              <FadeInWhenVisible key={tier.id} delay={i * 0.12} className="h-full">
                 <PricingCard
                   tier={tier}
                   name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}

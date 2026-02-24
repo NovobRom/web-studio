@@ -23,7 +23,7 @@ export function PricingCard({
 
   return (
     <div
-      className={`relative rounded-card p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${featured
+      className={`relative rounded-card p-10 flex flex-col h-full transition-all duration-300 hover:-translate-y-1 ${featured
         ? "border border-accent/30 bg-gradient-to-b from-accent-dim to-bg-card hover:border-accent/50"
         : "border border-border bg-bg-card hover:border-border-hover"
         }`}
