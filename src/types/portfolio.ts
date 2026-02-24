@@ -13,4 +13,9 @@ export interface PortfolioItem {
   liveUrl?: string;
   imageUrl?: string;
   placeholderInitials?: string;
+  metricsKeys?: {
+    perf: string;
+    langs: string;
+    reviews: string;
+  };
 }

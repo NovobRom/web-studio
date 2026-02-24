@@ -10,7 +10,6 @@ import { Portfolio } from "@/components/sections/Portfolio";
 // Lazy load below-the-fold sections to improve initial page load speed
 const Process = dynamic(() => import("@/components/sections/Process").then(mod => mod.Process));
 const PortfolioMiniCta = dynamic(() => import("@/components/sections/PortfolioMiniCta").then(mod => mod.PortfolioMiniCta));
-const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(mod => mod.Testimonials));
 const Pricing = dynamic(() => import("@/components/sections/Pricing").then(mod => mod.Pricing));
 const Faq = dynamic(() => import("@/components/sections/Faq").then(mod => mod.Faq));
 const Cta = dynamic(() => import("@/components/sections/Cta").then(mod => mod.Cta));
@@ -40,9 +39,6 @@ export default async function HomePage({
         <Portfolio />
         <Suspense fallback={<SectionSkeleton />}>
           <PortfolioMiniCta />
-        </Suspense>
-        <Suspense fallback={<SectionSkeleton />}>
-          <Testimonials />
         </Suspense>
         <Suspense fallback={<SectionSkeleton />}>
           <Pricing />

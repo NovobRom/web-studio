@@ -25,6 +25,11 @@ export async function Portfolio() {
       taskKey: t.raw(baseKey).task ? t(`${baseKey}.task`) : undefined,
       solutionKey: t.raw(baseKey).solution ? t(`${baseKey}.solution`) : undefined,
       resultKey: t.raw(baseKey).result ? t(`${baseKey}.result`) : undefined,
+      metricsKeys: t.raw(baseKey).metrics ? {
+        perf: t(`${baseKey}.metrics.perf`),
+        langs: t(`${baseKey}.metrics.langs`),
+        reviews: t(`${baseKey}.metrics.reviews`),
+      } : undefined,
     };
   });
 
@@ -35,7 +40,7 @@ export async function Portfolio() {
     >
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader label={t("label")} title={title} />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-[1100px] mx-auto">
+        <div className="flex flex-col gap-10 max-w-[1100px] mx-auto">
           {resolvedItems.map((item, i) => (
             <FadeInWhenVisible key={item.id} delay={i * 0.12}>
               <PortfolioCard

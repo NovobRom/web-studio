@@ -10,7 +10,7 @@
     "portfolio": "Portfolio",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "cta": "Start a Project"
+    "cta": "Free Consultation"
   },
   "Hero": {
     "badge": "Websites for small business",
@@ -47,15 +47,12 @@
         "title": "li_zagar_tan",
         "task": "\nTask:\nThe client only had an Instagram profile for bookings. The goal was to build a digital presence from scratch to look professional and stand out from competitors.",
         "solution": "\nSolution:\nDeveloped a premium design from a blank canvas, built a multilingual platform (LT/RU/EN) using Next.js 15, and integrated Treatwell booking widget along with a Supabase-powered gallery.",
-        "result": "\nResult:\nThe client received a fully functional premium platform. The site looks expensive, converts traffic into leads, and builds trust (4.9★ from 73 reviews)."
-      },
-      "sharpco": {
-        "title": "Sharp & Co. Barbershop",
-        "description": "Modern barbershop landing page with online booking, service menu, and Instagram feed integration."
-      },
-      "morningcup": {
-        "title": "Morning Cup Café",
-        "description": "Cozy café website with digital menu, reservation form, and location map. Designed for mobile-first experience."
+        "result": "\nResult:\nThe client received a fully functional premium platform. The site looks expensive, converts traffic into leads, and builds trust (4.9★ from 73 reviews).",
+        "metrics": {
+          "perf": "Performance",
+          "langs": "Languages",
+          "reviews": "From 73 reviews"
+        }
       }
     }
   },
@@ -181,5 +178,10 @@
     "text": "We use analytics to improve the site. Do you agree?",
     "accept": "Accept",
     "decline": "Decline"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "updated": "Last updated: February 2026",
+    "back": "← Back to home"
   }
 }

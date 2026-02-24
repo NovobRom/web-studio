@@ -1,4 +1,3 @@
-"use client";
 
 import type { PricingTier } from "@/types/pricing";
 
@@ -25,24 +24,12 @@ export function PricingCard({
 
   return (
     <div
-      onMouseMove={(e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        e.currentTarget.style.setProperty("--x", `${x}px`);
-        e.currentTarget.style.setProperty("--y", `${y}px`);
-      }}
       className={`group relative rounded-card p-10 flex flex-col h-full overflow-hidden transition-all duration-300 hover:-translate-y-1 ${featured
         ? "border border-accent/30 bg-gradient-to-b from-accent-dim to-bg-card hover:border-accent/50"
         : "border border-border bg-bg-card hover:border-border-hover"
         }`}
     >
-      <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 z-0"
-        style={{
-          background: "radial-gradient(600px circle at var(--x) var(--y), rgba(212, 168, 67, 0.08), transparent 40%)",
-        }}
-      />
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,168,67,0.08),transparent_70%)]" />
 
       {/* Content wrapper to put above glow layer */}
       <div className="relative z-10 flex flex-col h-full">

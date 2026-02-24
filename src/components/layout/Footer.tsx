@@ -18,6 +18,30 @@ export async function Footer() {
             {t("email")}
           </a>
           <a
+            href="https://t.me/r_novobranets"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-text-muted no-underline hover:text-text-dim transition-colors"
+          >
+            Telegram
+          </a>
+          <a
+            href="https://www.linkedin.com/in/roman-novobranets/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-text-muted no-underline hover:text-text-dim transition-colors"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/NovobRom"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-text-muted no-underline hover:text-text-dim transition-colors"
+          >
+            GitHub
+          </a>
+          <a
             href={BRIEF_URL}
             target="_blank"
             rel="noopener noreferrer"

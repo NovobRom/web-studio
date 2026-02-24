@@ -17,14 +17,17 @@ export async function Process() {
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader label={t("label")} title={title} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
-          {processSteps.map((step, i) => (
-            <StepCard
-              key={step.number}
-              number={step.number}
-              title={t(`steps.${i}.title` as Parameters<typeof t>[0])}
-              description={t(`steps.${i}.description` as Parameters<typeof t>[0])}
-            />
-          ))}
+          {processSteps.map((step, i) => {
+            const index = i as 0 | 1 | 2;
+            return (
+              <StepCard
+                key={step.number}
+                number={step.number}
+                title={t(`steps.${index}.title`)}
+                description={t(`steps.${index}.description`)}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

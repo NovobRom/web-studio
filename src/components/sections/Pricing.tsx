@@ -19,20 +19,35 @@ export async function Pricing() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
           {pricingTiers.map((tier) => {
             const key = tier.id as "landing" | "growth" | "fulllaunch";
-            const features = tier.featureKeys.map((_, fi) =>
-              t(`tiers.${key}.features.${fi}` as Parameters<typeof t>[0])
-            );
+
+            // Map strictly to avoid TS casting errors
+            const name = key === "landing" ? t("tiers.landing.name")
+              : key === "growth" ? t("tiers.growth.name")
+                : t("tiers.fulllaunch.name");
+
+            const description = key === "landing" ? t("tiers.landing.description")
+              : key === "growth" ? t("tiers.growth.description")
+                : t("tiers.fulllaunch.description");
+
+            const features = tier.featureKeys.map((_, fi) => {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              if (key === "landing") return t(`tiers.landing.features.${fi}` as any);
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              if (key === "growth") return t(`tiers.growth.features.${fi}` as any);
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+              return t(`tiers.fulllaunch.features.${fi}` as any);
+            });
 
             return (
               <PricingCard
                 key={tier.id}
                 tier={tier}
-                name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}
-                description={t(`tiers.${key}.description` as Parameters<typeof t>[0])}
+                name={name}
+                description={description}
                 features={features}
                 ctaLabel={t("cta")}
                 popularLabel={t("popular")}
-                pricePrefix={tier.pricePrefixKey ? t(tier.pricePrefixKey as Parameters<typeof t>[0]) : undefined}
+                pricePrefix={tier.pricePrefixKey ? t("from") : undefined}
               />
             );
           })}

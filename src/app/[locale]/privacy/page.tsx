@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BASE_URL } from "@/config/constants";
 import type { Metadata } from "next";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata({
     params,
@@ -18,8 +19,6 @@ export async function generateMetadata({
     };
 }
 
-import { setRequestLocale } from "next-intl/server";
-
 export default async function PrivacyPage({
     params,
 }: {
@@ -28,14 +27,16 @@ export default async function PrivacyPage({
     const { locale } = await params;
     setRequestLocale(locale);
 
+    const t = await getTranslations("Privacy");
+
     return (
         <main className="max-w-[720px] mx-auto px-5 md:px-10 py-32 prose prose-invert">
             <h1 className="font-display text-[2.5rem] font-normal mb-8 tracking-[-0.02em]">
-                Privacy Policy
+                {t("title")}
             </h1>
 
             <p className="text-text-dim mb-6">
-                <strong>Last updated:</strong> February 2026
+                <strong>{t("updated")}</strong>
             </p>
 
             <section className="mb-8">
@@ -111,7 +112,7 @@ export default async function PrivacyPage({
                 href={`/${locale}`}
                 className="inline-block mt-8 text-accent no-underline hover:opacity-80 transition-opacity"
             >
-                ← Back to home
+                {t("back")}
             </Link>
         </main>
     );

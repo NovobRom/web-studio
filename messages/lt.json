@@ -10,7 +10,7 @@
     "portfolio": "Portfelis",
     "pricing": "Kainos",
     "faq": "DUK",
-    "cta": "Pradėti projektą"
+    "cta": "Nemokama konsultacija"
   },
   "Hero": {
     "badge": "Svetainės smulkiam verslui",
@@ -47,15 +47,12 @@
         "title": "li_zagar_tan",
         "task": "\nUžduotis:\nKlientas registracijoms naudojo tik Instagram profilį. Tikslas buvo sukurti skaitmeninį atstovavimą nuo nulio, kad atrodytų profesionaliai ir išsiskirtų iš konkurentų.",
         "solution": "\nSprendimas:\nSukurtas aukščiausios kokybės dizainas nuo švaraus lapo, sukurta daugiakalbė platforma (LT/RU/EN) naudojant Next.js 15, integruotas Treatwell registracijos valdiklis ir Supabase galerija.",
-        "result": "\nRezultatas:\nKlientas gavo pilnai veikiančią premium platformą. Svetainė atrodo brangiai, verčia srautą į užklausas ir didina pasitikėjimą studija (4.9★ iš 73 atsiliepimų)."
-      },
-      "sharpco": {
-        "title": "Sharp & Co. Kirpykla",
-        "description": "Modernus kirpyklos landingas su internetine registracija, paslaugų meniu ir Instagram integracij."
-      },
-      "morningcup": {
-        "title": "Morning Cup Kavinė",
-        "description": "Jaukios kavinės svetainė su skaitmeniniu meniu, rezervacijos forma ir žemėlapiu. Sukurta mobiliai pirma."
+        "result": "\nRezultatas:\nKlientas gavo pilnai veikiančią premium platformą. Svetainė atrodo brangiai, verčia srautą į užklausas ir didina pasitikėjimą studija (4.9★ iš 73 atsiliepimų).",
+        "metrics": {
+          "perf": "Našumas",
+          "langs": "Kalbos",
+          "reviews": "Iš 73 atsiliepimų"
+        }
       }
     }
   },
@@ -181,5 +178,10 @@
     "text": "Naudojame analitiką svetainės gerinimui. Ar sutinkate?",
     "accept": "Sutinku",
     "decline": "Nesutinku"
+  },
+  "Privacy": {
+    "title": "Privatumo politika",
+    "updated": "Paskutinį kartą atnaujinta: 2026 m. Vasario mėn.",
+    "back": "← Į pradžią"
   }
 }

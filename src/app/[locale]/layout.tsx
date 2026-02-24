@@ -4,6 +4,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#0c0c0e",
 };
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
@@ -12,8 +13,6 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import { BASE_URL } from "@/config/constants";
-import { LenisScroll } from "@/components/ui/LenisScroll";
-import { CustomCursor } from "@/components/ui/CustomCursor";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import "./globals.css";
 
@@ -78,7 +77,6 @@ export async function generateMetadata({
       description: t("description"),
       images: [`${BASE_URL}/og-image.jpg`],
     },
-    themeColor: "#0c0c0e",
   };
 }
 
@@ -97,7 +95,14 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const messages = await getMessages();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const allMessages = (await getMessages()) as Record<string, any>;
+  const messages = {
+    Faq: allMessages.Faq,
+    Nav: allMessages.Nav,
+    CookieConsent: allMessages.CookieConsent,
+  };
+
   const tFaq = await getTranslations({ locale, namespace: "Faq" });
   const tMeta = await getTranslations({ locale, namespace: "Meta" });
 
@@ -122,7 +127,11 @@ export default async function LocaleLayout({
           "addressLocality": "Vilnius",
           "addressCountry": "LT",
         },
-        "sameAs": [],
+        "sameAs": [
+          "https://t.me/r_novobranets",
+          "https://www.linkedin.com/in/roman-novobranets/",
+          "https://github.com/NovobRom"
+        ],
       },
       {
         "@type": "Service",
@@ -227,8 +236,7 @@ export default async function LocaleLayout({
         )}
 
         <NextIntlClientProvider messages={messages}>
-          <CustomCursor />
-          <LenisScroll>{children}</LenisScroll>
+          {children}
           <CookieConsent />
         </NextIntlClientProvider>
       </body>
