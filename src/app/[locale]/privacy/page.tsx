@@ -2,11 +2,7 @@ import Link from "next/link";
 import { BASE_URL } from "@/config/constants";
 import type { Metadata } from "next";
 
-export async function generateMetadata({
-    params,
-}: {
-    params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
     return {
         title: "Privacy Policy — Roman Novobranets",
         description: "Privacy policy for roman-novobranets.vercel.app",
