@@ -53,7 +53,6 @@ export async function Testimonials() {
                                             fill
                                             className="object-cover"
                                             sizes="48px"
-                                            onError={() => { }} // fallback handled by CSS below
                                         />
                                     ) : null}
                                     {/* Fallback initial — shown when no image */}

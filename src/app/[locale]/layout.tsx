@@ -7,7 +7,7 @@ export const viewport: Viewport = {
 };
 import { Instrument_Serif, DM_Sans } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import { routing } from "@/i18n/routing";
@@ -42,6 +42,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
+  setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "Meta" });
 
   return {
@@ -94,6 +95,8 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const messages = await getMessages();
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -214,11 +217,11 @@ export default async function LocaleLayout({
           </Script>
         )}
 
-        <CustomCursor />
-        <LenisScroll>
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </LenisScroll>
-        <CookieConsent />
+        <NextIntlClientProvider messages={messages}>
+          <CustomCursor />
+          <LenisScroll>{children}</LenisScroll>
+          <CookieConsent />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

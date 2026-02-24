@@ -2,7 +2,14 @@ import Link from "next/link";
 import { BASE_URL } from "@/config/constants";
 import type { Metadata } from "next";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+    const { locale } = await params;
+    setRequestLocale(locale);
+
     return {
         title: "Privacy Policy — Roman Novobranets",
         description: "Privacy policy for roman-novobranets.vercel.app",
@@ -11,12 +18,15 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
+import { setRequestLocale } from "next-intl/server";
+
 export default async function PrivacyPage({
     params,
 }: {
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
+    setRequestLocale(locale);
 
     return (
         <main className="max-w-[720px] mx-auto px-5 md:px-10 py-32 prose prose-invert">
