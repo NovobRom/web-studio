@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "@/components/LocaleSwitcher";
 import { BRIEF_URL } from "@/config/constants";

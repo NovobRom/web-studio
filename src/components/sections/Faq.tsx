@@ -2,9 +2,8 @@
 
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { FadeInWhenVisible } from "@/components/ui/FadeInWhenVisible";
 
 export function Faq() {
     const t = useTranslations("Faq");
@@ -31,53 +30,53 @@ export function Faq() {
                 {faqs.map((faq, i) => {
                     const isOpen = openIndex === i;
                     return (
-                        <FadeInWhenVisible key={faq.id} delay={i * 0.1}>
-                            <div
-                                className={`border rounded-[var(--radius-lg)] overflow-hidden transition-colors duration-300 ${isOpen
-                                    ? "bg-bg-card border-accent/20"
-                                    : "bg-surface border-border hover:border-border-hover cursor-pointer"
-                                    }`}
+                        <div
+                            key={faq.id}
+                            className={`border rounded-[var(--radius-lg)] overflow-hidden transition-colors duration-300 ${isOpen
+                                ? "bg-bg-card border-accent/20"
+                                : "bg-surface border-border hover:border-border-hover cursor-pointer"
+                                }`}
+                        >
+                            <button
+                                onClick={() => setOpenIndex(isOpen ? null : i)}
+                                className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none"
+                                aria-expanded={isOpen}
+                                aria-label={`${isOpen ? 'Close' : 'Open'} ${faq.question}`}
                             >
-                                <button
-                                    onClick={() => setOpenIndex(isOpen ? null : i)}
-                                    className="w-full text-left px-6 py-5 flex items-center justify-between focus:outline-none"
-                                    aria-expanded={isOpen}
+                                <span className="font-medium text-[1.05rem] pr-6">{faq.question}</span>
+                                <div
+                                    className="flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center transition-transform duration-300"
+                                    style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
                                 >
-                                    <span className="font-medium text-[1.05rem] pr-6">{faq.question}</span>
-                                    <div
-                                        className="flex-shrink-0 w-8 h-8 rounded-full border border-border flex items-center justify-center transition-transform duration-300"
-                                        style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                                    <svg
+                                        width="12"
+                                        height="12"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     >
-                                        <svg
-                                            width="12"
-                                            height="12"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        >
-                                            <polyline points="6 9 12 15 18 9"></polyline>
-                                        </svg>
-                                    </div>
-                                </button>
-                                <AnimatePresence initial={false}>
-                                    {isOpen && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        >
-                                            <div className="px-6 pb-6 pt-0 text-text-dim text-[0.95rem] leading-relaxed">
-                                                {faq.answer}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </FadeInWhenVisible>
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                            </button>
+                            <AnimatePresence initial={false}>
+                                {isOpen && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    >
+                                        <div className="px-6 pb-6 pt-0 text-text-dim text-[0.95rem] leading-relaxed">
+                                            {faq.answer}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
                     );
                 })}
             </div>

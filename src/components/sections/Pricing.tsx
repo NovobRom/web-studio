@@ -1,7 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { PricingCard } from "@/components/ui/PricingCard";
-import { FadeInWhenVisible } from "@/components/ui/FadeInWhenVisible";
 import { pricingTiers } from "@/data/pricing";
 
 export async function Pricing() {
@@ -18,24 +17,23 @@ export async function Pricing() {
       <div className="max-w-[1200px] mx-auto">
         <SectionHeader label={t("label")} title={title} />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
-          {pricingTiers.map((tier, i) => {
+          {pricingTiers.map((tier) => {
             const key = tier.id as "landing" | "growth" | "fulllaunch";
             const features = tier.featureKeys.map((_, fi) =>
               t(`tiers.${key}.features.${fi}` as Parameters<typeof t>[0])
             );
 
             return (
-              <FadeInWhenVisible key={tier.id} delay={i * 0.12} className="h-full">
-                <PricingCard
-                  tier={tier}
-                  name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}
-                  description={t(`tiers.${key}.description` as Parameters<typeof t>[0])}
-                  features={features}
-                  ctaLabel={t("cta")}
-                  popularLabel={t("popular")}
-                  pricePrefix={tier.pricePrefixKey ? t(tier.pricePrefixKey as Parameters<typeof t>[0]) : undefined}
-                />
-              </FadeInWhenVisible>
+              <PricingCard
+                key={tier.id}
+                tier={tier}
+                name={t(`tiers.${key}.name` as Parameters<typeof t>[0])}
+                description={t(`tiers.${key}.description` as Parameters<typeof t>[0])}
+                features={features}
+                ctaLabel={t("cta")}
+                popularLabel={t("popular")}
+                pricePrefix={tier.pricePrefixKey ? t(tier.pricePrefixKey as Parameters<typeof t>[0]) : undefined}
+              />
             );
           })}
         </div>

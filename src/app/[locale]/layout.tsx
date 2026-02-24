@@ -78,6 +78,7 @@ export async function generateMetadata({
       description: t("description"),
       images: [`${BASE_URL}/og-image.jpg`],
     },
+    themeColor: "#0c0c0e",
   };
 }
 
@@ -97,6 +98,15 @@ export default async function LocaleLayout({
   }
 
   const messages = await getMessages();
+  const tFaq = await getTranslations({ locale, namespace: "Faq" });
+  const tMeta = await getTranslations({ locale, namespace: "Meta" });
+
+  const serviceName =
+    locale === "ru"
+      ? "Разработка Landing Page"
+      : locale === "lt"
+        ? "Landing Page kūrimas"
+        : "Landing Page Development";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -117,8 +127,8 @@ export default async function LocaleLayout({
       {
         "@type": "Service",
         "provider": { "@id": `${BASE_URL}/#person` },
-        "name": "Landing Page Development",
-        "description": "Fast, beautiful websites for service businesses. Go live from 2 days.",
+        "name": serviceName,
+        "description": tMeta("description"),
         "areaServed": "LT",
         "offers": {
           "@type": "Offer",
@@ -132,34 +142,34 @@ export default async function LocaleLayout({
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How long does it take to create a website?",
+            "name": tFaq("items.q1.question"),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "On average, from 2 to 5 days, depending on the complexity of the project and the availability of your ready materials (texts, photos).",
+              "text": tFaq("items.q1.answer"),
             },
           },
           {
             "@type": "Question",
-            "name": "What if I don't like the design?",
+            "name": tFaq("items.q2.question"),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Before the final launch, we approve the layout. I make iterations of edits so that you are completely satisfied with the result.",
+              "text": tFaq("items.q2.answer"),
             },
           },
           {
             "@type": "Question",
-            "name": "How does the payment work?",
+            "name": tFaq("items.q3.question"),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The payment is divided into two parts: a 50% advance payment before starting the work and the remaining 50% after the approval and launch of the site.",
+              "text": tFaq("items.q3.answer"),
             },
           },
           {
             "@type": "Question",
-            "name": "Do I need to pay for website support later?",
+            "name": tFaq("items.q4.question"),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 'Full Launch' package includes 1 month of support. After that, you can either administer the site yourself or request one-time paid assistance.",
+              "text": tFaq("items.q4.answer"),
             },
           },
         ],
@@ -173,7 +183,6 @@ export default async function LocaleLayout({
       className={`${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <body>
-        <style>{`@media (pointer: fine) { *, *::before, *::after { cursor: none !important; } }`}</style>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

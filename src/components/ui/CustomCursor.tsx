@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "motion/react";
 
 export function CustomCursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
@@ -20,21 +19,33 @@ export function CustomCursor() {
         let curX = 0;
         let curY = 0;
         let rafId: number;
+        let isAnimating = false;
 
         const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
         const animate = () => {
-            curX = lerp(curX, mouseX, 0.12);
-            curY = lerp(curY, mouseY, 0.12);
+            curX = lerp(curX, mouseX, 0.25);
+            curY = lerp(curY, mouseY, 0.25);
             cursor.style.transform = `translate(${curX}px, ${curY}px)`;
-            rafId = requestAnimationFrame(animate);
+
+            // Stop the loop when cursor has caught up to the mouse
+            if (Math.abs(curX - mouseX) > 0.5 || Math.abs(curY - mouseY) > 0.5) {
+                rafId = requestAnimationFrame(animate);
+            } else {
+                isAnimating = false;
+            }
         };
-        rafId = requestAnimationFrame(animate);
 
         const onMouseMove = (e: MouseEvent) => {
-            mouseX = e.clientX - 12;
-            mouseY = e.clientY - 12;
+            mouseX = e.clientX - 10;
+            mouseY = e.clientY - 10;
             if (!isVisible) setIsVisible(true);
+
+            // Only start rAF loop if not already running
+            if (!isAnimating) {
+                isAnimating = true;
+                rafId = requestAnimationFrame(animate);
+            }
         };
 
         const onMouseOver = (e: MouseEvent) => {
@@ -70,24 +81,17 @@ export function CustomCursor() {
             className="fixed top-0 left-0 pointer-events-none z-[9999] hidden md:block"
             aria-hidden="true"
         >
-            <motion.div
-                animate={{
-                    width: isPointer ? 40 : 24,
-                    height: isPointer ? 40 : 24,
-                    opacity: isVisible ? 1 : 0,
-                    borderColor: isPointer
-                        ? "var(--color-accent)"
-                        : "rgba(212, 168, 67, 0.5)",
-                    backgroundColor: isPointer
-                        ? "rgba(212, 168, 67, 0.08)"
-                        : "transparent",
-                }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
+            <div
                 style={{
+                    width: isPointer ? 32 : 20,
+                    height: isPointer ? 32 : 20,
+                    opacity: isVisible ? 1 : 0,
                     borderRadius: "50%",
-                    border: "1.5px solid rgba(212, 168, 67, 0.5)",
-                    marginLeft: isPointer ? -8 : 0,
-                    marginTop: isPointer ? -8 : 0,
+                    border: `1.5px solid ${isPointer ? "var(--color-accent)" : "rgba(212, 168, 67, 0.5)"}`,
+                    backgroundColor: isPointer ? "rgba(212, 168, 67, 0.08)" : "transparent",
+                    marginLeft: isPointer ? -6 : 0,
+                    marginTop: isPointer ? -6 : 0,
+                    transition: "width 0.18s ease-out, height 0.18s ease-out, opacity 0.15s ease-out, border-color 0.18s ease-out, background-color 0.18s ease-out, margin 0.18s ease-out",
                 }}
             />
         </div>

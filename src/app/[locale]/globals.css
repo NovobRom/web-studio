@@ -39,6 +39,12 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  @media (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
+
   /* Noise overlay */
   body::before {
     content: "";

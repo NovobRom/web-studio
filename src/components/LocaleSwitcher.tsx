@@ -16,7 +16,13 @@ export function LocaleSwitcher() {
   const pathname = usePathname();
 
   const handleChange = (nextLocale: string) => {
-    router.replace(pathname, { locale: nextLocale });
+    if (nextLocale === locale) return;
+    const scrollY = window.scrollY;
+    router.replace(pathname, { locale: nextLocale, scroll: false });
+    // Restore scroll position after the route transition renders
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: scrollY, behavior: "instant" });
+    });
   };
 
   return (
@@ -26,11 +32,10 @@ export function LocaleSwitcher() {
           key={loc}
           onClick={() => handleChange(loc)}
           aria-label={LOCALE_LABELS[loc] ?? loc}
-          className={`px-2.5 py-1 rounded text-[0.78rem] font-medium uppercase tracking-[0.05em] border transition-all duration-200 cursor-pointer ${
-            loc === locale
+          className={`px-2.5 py-1 rounded text-[0.78rem] font-medium uppercase tracking-[0.05em] border transition-all duration-200 cursor-pointer ${loc === locale
               ? "border-accent text-accent bg-accent-dim"
               : "border-transparent text-text-muted hover:text-text-dim hover:border-border-hover bg-transparent"
-          }`}
+            }`}
         >
           {loc}
         </button>

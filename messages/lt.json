@@ -19,12 +19,6 @@
     "primaryCta": "Užpildyti užklausą — nemokamai",
     "secondaryCta": "Peržiūrėti darbus"
   },
-  "Stats": {
-    "clients": "Patenkinti klientai",
-    "rating": "Vidutinis įvertinimas",
-    "mobile": "Veikia bet kuriame telefone",
-    "speed": "Puslapio greitis"
-  },
   "Process": {
     "label": "Kaip tai veikia",
     "title": "Trys žingsniai iki <highlight>paleidimo</highlight>",

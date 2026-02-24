@@ -4,7 +4,6 @@ import { setRequestLocale } from "next-intl/server";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { StatsBar } from "@/components/sections/StatsBar";
 import { Services } from "@/components/sections/Services";
 import { Portfolio } from "@/components/sections/Portfolio";
 
@@ -34,7 +33,6 @@ export default async function HomePage({
       <Nav />
       <main>
         <Hero />
-        <StatsBar />
         <Services />
         <Suspense fallback={<SectionSkeleton />}>
           <Process />

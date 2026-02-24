@@ -19,12 +19,6 @@
     "primaryCta": "Fill a Brief — It's Free",
     "secondaryCta": "See My Work"
   },
-  "Stats": {
-    "clients": "Happy clients",
-    "rating": "Average rating",
-    "mobile": "Works on any phone",
-    "speed": "Page speed score"
-  },
   "Process": {
     "label": "How it works",
     "title": "Three steps to <highlight>go live</highlight>",
