@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useState, useEffect, useCallback } from "react";
-import { motion } from "motion/react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 interface MagneticButtonProps {
     children: React.ReactNode;
@@ -17,73 +17,62 @@ export function MagneticButton({
     textStrength = 10,
 }: MagneticButtonProps) {
     const ref = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
-    const rafRef = useRef<number>(0);
-    const pendingRef = useRef<{ x: number; y: number } | null>(null);
 
-    // Throttle via rAF — only compute on animation frames
-    const flushPending = useCallback(() => {
-        if (!pendingRef.current) return;
-        const { x, y } = pendingRef.current;
-        pendingRef.current = null;
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
 
-        if (!ref.current) return;
-        const { height, width, left, top } = ref.current.getBoundingClientRect();
-        const distX = x - (left + width / 2);
-        const distY = y - (top + height / 2);
+    const springConfig = { stiffness: 150, damping: 15, mass: 0.1 };
+    const springX = useSpring(x, springConfig);
+    const springY = useSpring(y, springConfig);
 
-        setPosition({
-            x: (distX / width) * strength,
-            y: (distY / height) * strength,
-        });
-        setTextPosition({
-            x: (distX / width) * textStrength,
-            y: (distY / height) * textStrength,
-        });
-    }, [strength, textStrength]);
+    const textX = useMotionValue(0);
+    const textY = useMotionValue(0);
+    const textSpringX = useSpring(textX, springConfig);
+    const textSpringY = useSpring(textY, springConfig);
 
     useEffect(() => {
         if (!isHovered) {
-            setPosition({ x: 0, y: 0 });
-            setTextPosition({ x: 0, y: 0 });
+            x.set(0);
+            y.set(0);
+            textX.set(0);
+            textY.set(0);
             return;
         }
 
         // Disable magnetic effect on touch/mobile
         if (!window.matchMedia("(pointer: fine)").matches) return;
 
-        const onMouseMove = (e: MouseEvent) => {
-            pendingRef.current = { x: e.clientX, y: e.clientY };
-            cancelAnimationFrame(rafRef.current);
-            rafRef.current = requestAnimationFrame(flushPending);
-        };
-
-        // Listen on the element only, not window
         const el = ref.current;
         if (!el) return;
+
+        const onMouseMove = (e: MouseEvent) => {
+            const { height, width, left, top } = el.getBoundingClientRect();
+            const distX = e.clientX - (left + width / 2);
+            const distY = e.clientY - (top + height / 2);
+
+            x.set((distX / width) * strength);
+            y.set((distY / height) * strength);
+            textX.set((distX / width) * textStrength);
+            textY.set((distY / height) * textStrength);
+        };
+
         el.addEventListener("mousemove", onMouseMove, { passive: true });
 
         return () => {
             el.removeEventListener("mousemove", onMouseMove);
-            cancelAnimationFrame(rafRef.current);
         };
-    }, [isHovered, flushPending]);
+    }, [isHovered, strength, textStrength, x, y, textX, textY]);
 
     return (
         <motion.div
             ref={ref}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            animate={{ x: position.x, y: position.y }}
-            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+            style={{ x: springX, y: springY }}
             className={`relative inline-block ${className}`}
         >
-            <motion.div
-                animate={{ x: textPosition.x, y: textPosition.y }}
-                transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-            >
+            <motion.div style={{ x: textSpringX, y: textSpringY }}>
                 {children}
             </motion.div>
         </motion.div>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import type { PortfolioItem } from "@/types/portfolio";
 
@@ -17,12 +19,25 @@ export function PortfolioCard({
   const isLive = item.status === "live";
 
   const CardContent = (
-    <div className="group bg-bg border border-border rounded-card overflow-hidden transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer"
+    <div className="group relative bg-bg border border-border rounded-card overflow-hidden transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer"
+      onMouseMove={(e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.currentTarget.style.setProperty("--x", `${x}px`);
+        e.currentTarget.style.setProperty("--y", `${y}px`);
+      }}
       style={{
         perspective: "1000px",
         transformStyle: "preserve-3d",
       }}
     >
+      <div
+        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 z-10"
+        style={{
+          background: "radial-gradient(600px circle at var(--x) var(--y), rgba(212, 168, 67, 0.08), transparent 40%)",
+        }}
+      />
       {/* Thumbnail */}
       <div className="relative h-[220px] bg-gradient-to-br from-bg-card-hover to-bg overflow-hidden flex items-center justify-center">
         {item.imageUrl ? (

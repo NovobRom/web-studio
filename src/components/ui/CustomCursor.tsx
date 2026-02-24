@@ -50,10 +50,7 @@ export function CustomCursor() {
 
         const onMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-            const isClickable =
-                target.closest("a") ||
-                target.closest("button") ||
-                target.closest("[data-cursor='pointer']");
+            const isClickable = target.closest("a, button, [data-cursor='pointer']");
             setIsPointer(Boolean(isClickable));
         };
 
