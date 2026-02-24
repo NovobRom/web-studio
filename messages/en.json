@@ -20,10 +20,10 @@
     "secondaryCta": "See My Work"
   },
   "Stats": {
-    "delivery": "Fastest launch",
-    "mobile": "Mobile score",
-    "seo": "PageSpeed",
-    "uptime": "Satisfied clients"
+    "clients": "Happy clients",
+    "rating": "Average rating",
+    "mobile": "Works on any phone",
+    "speed": "Page speed score"
   },
   "Process": {
     "label": "How it works",
@@ -136,11 +136,6 @@
         "name": "li_zagar_tan Studio",
         "role": "Beauty Studio, Vilnius",
         "text": "Roman built our platform from scratch in just a few days. Before, we only had Instagram. Now we have a multilingual booking site that looks premium, loads instantly, and our clients trust it. 4.9★ from 73 reviews — that says it all."
-      },
-      "client2": {
-        "name": "Your Name Here",
-        "role": "Your Business",
-        "text": "Want your review here? Let's build something great together. Fill in the brief — it takes 5 minutes and it's completely free."
       }
     }
   },
@@ -182,5 +177,15 @@
     "title": "Page not found",
     "sub": "The page you're looking for doesn't exist or has been moved.",
     "cta": "Back to Home"
+  },
+  "PortfolioMiniCta": {
+    "label": "Like what you see?",
+    "title": "Let's build something like this for your business",
+    "cta": "Fill a Brief — It's Free"
+  },
+  "CookieConsent": {
+    "text": "We use analytics to improve the site. Do you agree?",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }

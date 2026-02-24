@@ -42,6 +42,7 @@ export async function Portfolio() {
                 item={item}
                 viewLiveLabel={t("viewLive")}
                 comingSoonLabel={t("comingSoon")}
+                priority={i === 0}
               />
             </FadeInWhenVisible>
           ))}

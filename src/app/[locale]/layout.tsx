@@ -13,6 +13,8 @@ import Script from "next/script";
 import { routing } from "@/i18n/routing";
 import { BASE_URL } from "@/config/constants";
 import { LenisScroll } from "@/components/ui/LenisScroll";
+import { CustomCursor } from "@/components/ui/CustomCursor";
+import { CookieConsent } from "@/components/ui/CookieConsent";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -166,6 +168,7 @@ export default async function LocaleLayout({
       className={`${instrumentSerif.variable} ${dmSans.variable}`}
     >
       <body>
+        <style>{`@media (pointer: fine) { *, *::before, *::after { cursor: none !important; } }`}</style>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -179,10 +182,12 @@ export default async function LocaleLayout({
             />
             <Script id="google-analytics" strategy="afterInteractive">
               {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+                if (localStorage.getItem('cookie-consent') === 'accepted') {
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+                }
               `}
             </Script>
           </>
@@ -191,23 +196,27 @@ export default async function LocaleLayout({
         {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
           <Script id="meta-pixel" strategy="afterInteractive">
             {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID}');
-              fbq('track', 'PageView');
+              if (localStorage.getItem('cookie-consent') === 'accepted') {
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '${process.env.NEXT_PUBLIC_META_PIXEL_ID}');
+                fbq('track', 'PageView');
+              }
             `}
           </Script>
         )}
 
+        <CustomCursor />
         <LenisScroll>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </LenisScroll>
+        <CookieConsent />
       </body>
     </html>
   );

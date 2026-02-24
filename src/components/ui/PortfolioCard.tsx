@@ -5,17 +5,24 @@ interface PortfolioCardProps {
   item: PortfolioItem;
   viewLiveLabel: string;
   comingSoonLabel: string;
+  priority?: boolean;
 }
 
 export function PortfolioCard({
   item,
   viewLiveLabel,
   comingSoonLabel,
+  priority = false,
 }: PortfolioCardProps) {
   const isLive = item.status === "live";
 
   const CardContent = (
-    <div className="group bg-bg border border-border rounded-card overflow-hidden transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer">
+    <div className="group bg-bg border border-border rounded-card overflow-hidden transition-all duration-300 hover:border-border-hover hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(0,0,0,0.3)] cursor-pointer"
+      style={{
+        perspective: "1000px",
+        transformStyle: "preserve-3d",
+      }}
+    >
       {/* Thumbnail */}
       <div className="relative h-[220px] bg-gradient-to-br from-bg-card-hover to-bg overflow-hidden flex items-center justify-center">
         {item.imageUrl ? (
@@ -25,6 +32,7 @@ export function PortfolioCard({
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 100vw, 50vw"
+            priority={priority}
           />
         ) : (
           <span className="font-display text-4xl text-accent opacity-20">

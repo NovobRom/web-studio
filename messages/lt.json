@@ -20,10 +20,10 @@
     "secondaryCta": "Peržiūrėti darbus"
   },
   "Stats": {
-    "delivery": "Greitas paleidimas",
-    "mobile": "Mobilumo balas",
-    "seo": "PageSpeed",
-    "uptime": "Patenkinti klientai"
+    "clients": "Patenkinti klientai",
+    "rating": "Vidutinis įvertinimas",
+    "mobile": "Veikia bet kuriame telefone",
+    "speed": "Puslapio greitis"
   },
   "Process": {
     "label": "Kaip tai veikia",
@@ -136,11 +136,6 @@
         "name": "Studija li_zagar_tan",
         "role": "Grožio studija, Vilnius",
         "text": "Romanas sukūrė mūsų platformą nuo nulio per kelias dienas. Anksčiau turėjome tik Instagram. Dabar turime daugiakalbę rezervacijų svetainę, kuri atrodo aukščiausios kokybės, įkeliama akimirksniu ir klientai ja pasitiki. 4.9★ iš 73 atsiliepimų — kalba patys už save."
-      },
-      "client2": {
-        "name": "Jūsų vardas čia",
-        "role": "Jūsų verslas",
-        "text": "Norite savo atsiliepimo čia? Sukurkime kažką puikaus kartu. Užpildykite užklausą — tai trunka 5 minutes ir yra visiškai nemokama."
       }
     }
   },
@@ -182,5 +177,15 @@
     "title": "Puslapis nerastas",
     "sub": "Puslapis, kurio ieškote, neegzistuoja arba buvo perkeltas.",
     "cta": "Į pradžią"
+  },
+  "PortfolioMiniCta": {
+    "label": "Patinka tai, ką matote?",
+    "title": "Sukurkime ko nors panašaus jūsų verslui",
+    "cta": "Užpildyti užklausą — nemokamai"
+  },
+  "CookieConsent": {
+    "text": "Naudojame analitiką svetainės gerinimui. Ar sutinkate?",
+    "accept": "Sutinku",
+    "decline": "Nesutinku"
   }
 }

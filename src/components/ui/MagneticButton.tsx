@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import { motion } from "motion/react";
 
 interface MagneticButtonProps {
     children: React.ReactNode;
     className?: string;
-    strength?: number; // How far the button moves (in pixels)
-    textStrength?: number; // How far the text moves (in pixels)
+    strength?: number;
+    textStrength?: number;
 }
 
 export function MagneticButton({
@@ -20,42 +20,56 @@ export function MagneticButton({
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [textPosition, setTextPosition] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
+    const rafRef = useRef<number>(0);
+    const pendingRef = useRef<{ x: number; y: number } | null>(null);
+
+    // Throttle via rAF — only compute on animation frames
+    const flushPending = useCallback(() => {
+        if (!pendingRef.current) return;
+        const { x, y } = pendingRef.current;
+        pendingRef.current = null;
+
+        if (!ref.current) return;
+        const { height, width, left, top } = ref.current.getBoundingClientRect();
+        const distX = x - (left + width / 2);
+        const distY = y - (top + height / 2);
+
+        setPosition({
+            x: (distX / width) * strength,
+            y: (distY / height) * strength,
+        });
+        setTextPosition({
+            x: (distX / width) * textStrength,
+            y: (distY / height) * textStrength,
+        });
+    }, [strength, textStrength]);
 
     useEffect(() => {
-        const handleMousePosition = (e: MouseEvent) => {
-            if (!ref.current || !isHovered) return;
-
-            const { clientX, clientY } = e;
-            const { height, width, left, top } = ref.current.getBoundingClientRect();
-
-            const centerX = left + width / 2;
-            const centerY = top + height / 2;
-
-            const distanceX = clientX - centerX;
-            const distanceY = clientY - centerY;
-
-            setPosition({
-                x: (distanceX / width) * strength,
-                y: (distanceY / height) * strength,
-            });
-
-            setTextPosition({
-                x: (distanceX / width) * textStrength,
-                y: (distanceY / height) * textStrength,
-            });
-        };
-
-        if (isHovered) {
-            window.addEventListener("mousemove", handleMousePosition);
-        } else {
+        if (!isHovered) {
             setPosition({ x: 0, y: 0 });
             setTextPosition({ x: 0, y: 0 });
+            return;
         }
 
-        return () => {
-            window.removeEventListener("mousemove", handleMousePosition);
+        // Disable magnetic effect on touch/mobile
+        if (!window.matchMedia("(pointer: fine)").matches) return;
+
+        const onMouseMove = (e: MouseEvent) => {
+            pendingRef.current = { x: e.clientX, y: e.clientY };
+            cancelAnimationFrame(rafRef.current);
+            rafRef.current = requestAnimationFrame(flushPending);
         };
-    }, [isHovered, strength, textStrength]);
+
+        // Listen on the element only, not window
+        const el = ref.current;
+        if (!el) return;
+        el.addEventListener("mousemove", onMouseMove, { passive: true });
+
+        return () => {
+            el.removeEventListener("mousemove", onMouseMove);
+            cancelAnimationFrame(rafRef.current);
+        };
+    }, [isHovered, flushPending]);
 
     return (
         <motion.div
@@ -63,22 +77,12 @@ export function MagneticButton({
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             animate={{ x: position.x, y: position.y }}
-            transition={{
-                type: "spring",
-                stiffness: 150,
-                damping: 15,
-                mass: 0.1,
-            }}
+            transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             className={`relative inline-block ${className}`}
         >
             <motion.div
                 animate={{ x: textPosition.x, y: textPosition.y }}
-                transition={{
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 15,
-                    mass: 0.1,
-                }}
+                transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             >
                 {children}
             </motion.div>
