@@ -92,36 +92,38 @@
     "title": "Transparent <highlight>pricing</highlight>",
     "popular": "Popular",
     "cta": "Get Started",
-    "from": "from ",
+    "from": "FROM ",
     "tiers": {
       "landing": {
-        "name": "Landing Page",
-        "description": "Everything you need to go online.",
+        "name": "LANDING PAGE",
+        "description": "Your business online — done and ready.",
         "features": [
-          "One-page responsive website",
-          "Mobile-optimized design",
-          "Basic SEO setup",
-          "Deployed to fast CDN"
+          "Professional website in 2–3 languages",
+          "Looks great on phones and computers",
+          "Shows up on Google search",
+          "Fast and stable — no maintenance needed",
+          "Handover call + quick-start guide"
         ]
       },
-      "automation": {
-        "name": "Landing + Automation",
-        "description": "A site that works for you around the clock.",
+      "growth": {
+        "name": "LANDING + GROWTH",
+        "description": "Clients find you — without extra effort.",
         "features": [
           "Everything in Landing Page",
-          "Telegram or WhatsApp booking bot",
-          "Google Business Profile setup",
-          "Analytics dashboard"
+          "Online booking 24/7 (Fresha)",
+          "Your business on Google Maps",
+          "See how many people visit your site",
+          "Handover call + quick-start guide"
         ]
       },
       "fulllaunch": {
-        "name": "Full Launch",
-        "description": "Premium launch for ambitious businesses.",
+        "name": "FULL LAUNCH",
+        "description": "Your business grows while you work.",
         "features": [
-          "Everything in Landing + Automation",
-          "Multilingual support (2–3 languages)",
-          "Treatwell / Booksy integration",
-          "1 month post-launch support"
+          "Everything in Landing + Growth",
+          "Booking platform of your choice (Fresha, Treatwell, or Booksy)",
+          "1 month of support after launch",
+          "Handover call + quick-start guide"
         ]
       }
     }

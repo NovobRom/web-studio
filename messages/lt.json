@@ -92,36 +92,38 @@
     "title": "Skaidrios <highlight>kainos</highlight>",
     "popular": "Populiarus",
     "cta": "Pradėti",
-    "from": "nuo ",
+    "from": "NUO ",
     "tiers": {
       "landing": {
-        "name": "Landingas",
-        "description": "Viskas, ko reikia išeiti į internetą.",
+        "name": "LANDING PAGE",
+        "description": "Jūsų verslas internete — paruošta ir veikia.",
         "features": [
-          "Vieno puslapio adaptyvi svetainė",
-          "Mobiliems optimizuotas dizainas",
-          "Pagrindinis SEO nustatymas",
-          "Talpinimas greitu CDN"
+          "Profesionali svetainė 2–3 kalbomis",
+          "Puikiai atrodo telefone ir kompiuteryje",
+          "Rodoma \"Google\" paieškoje",
+          "Greitas ir stabilus — priežiūros nereikia",
+          "Perdavimo skambutis + pradžios instrukcija"
         ]
       },
-      "automation": {
-        "name": "Landingas + Automatizacija",
-        "description": "Svetainė, kuri dirba už jus visą parą.",
+      "growth": {
+        "name": "LANDING + GROWTH",
+        "description": "Klientai randa jus patys — be papildomų pastangų.",
         "features": [
-          "Viskas iš paketo Landingas",
-          "Rezervacijos botas Telegram arba WhatsApp",
-          "Google verslo profilio nustatymas",
-          "Analitikos skydelis"
+          "Viskas iš Landing Page paketo",
+          "Internetinė registracija 24/7 (Fresha)",
+          "Jūsų verslas \"Google\" žemėlapiuose",
+          "Matote, kiek žmonių lankosi jūsų svetainėje",
+          "Perdavimo skambutis + pradžios instrukcija"
         ]
       },
       "fulllaunch": {
-        "name": "Pilnas paleidimas",
-        "description": "Aukščiausios kokybės paleidimas ambicingam verslui.",
+        "name": "FULL LAUNCH",
+        "description": "Jūsų verslas auga, kol jūs dirbate.",
         "features": [
-          "Viskas iš paketo Landingas + Automatizacija",
-          "Daugiakalbė palaikymas (2–3 kalbos)",
-          "Treatwell / Booksy integracija",
-          "1 mėnesio palaikymas po paleidimo"
+          "Viskas iš Landing + Growth paketo",
+          "Registracijos platforma jūsų pasirinkimu (Fresha, Treatwell ar Booksy)",
+          "1 mėnesis palaikymo po paleidimo",
+          "Perdavimo skambutis + pradžios instrukcija"
         ]
       }
     }

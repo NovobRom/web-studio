@@ -23,9 +23,9 @@ export function PricingCard({
 
   return (
     <div
-      className={`relative rounded-card p-10 transition-all duration-300 hover:-translate-y-1 ${featured
-          ? "border border-accent/30 bg-gradient-to-b from-accent-dim to-bg-card hover:border-accent/50"
-          : "border border-border bg-bg-card hover:border-border-hover"
+      className={`relative rounded-card p-10 flex flex-col transition-all duration-300 hover:-translate-y-1 ${featured
+        ? "border border-accent/30 bg-gradient-to-b from-accent-dim to-bg-card hover:border-accent/50"
+        : "border border-border bg-bg-card hover:border-border-hover"
         }`}
     >
       {/* Popular badge */}
@@ -56,7 +56,7 @@ export function PricingCard({
       <p className="text-[0.88rem] text-text-dim mb-8 leading-snug">{description}</p>
 
       {/* Features */}
-      <ul className="flex flex-col gap-3.5 mb-9">
+      <ul className="flex flex-col gap-3.5 mb-9 flex-1">
         {features.map((feature, i) => (
           <li
             key={i}
@@ -73,8 +73,8 @@ export function PricingCard({
         target="_blank"
         rel="noopener noreferrer"
         className={`block w-full py-3.5 text-center rounded-[var(--radius-pill)] font-semibold text-[0.9rem] no-underline transition-all duration-300 ${featured
-            ? "bg-accent text-bg border border-accent hover:opacity-90 hover:-translate-y-px"
-            : "bg-transparent text-text border border-border-hover hover:border-accent hover:text-accent"
+          ? "bg-accent text-bg border border-accent hover:opacity-90 hover:-translate-y-px"
+          : "bg-transparent text-text border border-border-hover hover:border-accent hover:text-accent"
           }`}
       >
         {ctaLabel}
